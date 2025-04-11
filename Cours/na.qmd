@@ -13,24 +13,26 @@ head(airquality)
 
 ```{r}
 is.na(airquality)
+airquality[!complete.cases(airquality), ]
 ```
 
 ### Compter les NA
 
 ```{r}
-
+sum(is.na(airquality))
+colSums(is.na(airquality))
 ```
 
 ### Supprimer les lignes avec NA
 
 ```{r}
-
+airquality_clean <- na.omit(airquality)
 ```
 
 ### Remplacer les NA par la moyenne
 
 ```{r}
-
+airquality$Ozone[is.na(airquality$Ozone)] <- mean(airquality$Ozone, na.rm = TRUE)
 ```
 
 ## **Gérer les `NA`**

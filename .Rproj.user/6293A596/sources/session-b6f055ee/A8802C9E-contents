@@ -1,0 +1,31 @@
+---
+title: "decision"
+format: pdf
+editor: visual
+---
+
+## if
+
+```{r}
+
+```
+
+### if...else
+
+```{r}
+
+```
+
+### ifelse
+
+```{r}
+
+```
+
+### switch
+
+```{r}
+
+```
+
+## 

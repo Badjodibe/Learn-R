@@ -1,0 +1,90 @@
+---
+title: "filter les donnees"
+format: pdf
+editor: visual
+---
+
+```{r}
+data("gapminder")
+```
+
+```{r}
+View(gapminder)
+```
+
+### Énoncé 1
+
+> Affiche les pays africains dont l'espérance de vie en 2007 était inférieure à 50 ans.
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+### Énoncé 2
+
+> Trouve tous les pays asiatiques dont la population a dépassé 100 millions en 2007.
+
+```{r}
+
+```
+
+### Énoncé 3
+
+> Liste les pays d’Europe dont le PIB par habitant a augmenté entre 1997 et 2007.
+
+```{r}
+
+```
+
+### Énoncé 4
+
+> Trouve les pays qui, en 2002, avaient à la fois :
+>
+> -   Une espérance de vie \> 70 ans
+>
+> -   Un PIB par habitant \> 10 000
+>
+> -   Une population \< 10 millions
+
+------------------------------------------------------------------------
+
+### Énoncé 5
+
+> Quels pays ont vu leur espérance de vie **diminuer** entre 1982 et 1987 ?
+
+### Énoncé 6
+
+> Liste les pays qui ont **toujours** eu une espérance de vie supérieure à 70 ans durant toute la période.
+
+### Énoncé 7
+
+> Affiche les 5 pays d’Afrique avec le **plus grand gain d’espérance de vie** entre 1952 et 2007.
+
+------------------------------------------------------------------------
+
+Crée une colonne `cat_vie` qui classe l’espérance de vie en :
+
+-   `"Faible"` si \< 60
+
+-   `"Moyenne"` si entre 60 et 75
+
+-   `"Élevée"` si \> 75
+
+## Filtrer les données avec `filter()` – dplyr
+
+## Conditions logiques possibles :
+
+| Opérateur | Signification            |
+|-----------|--------------------------|
+| `==`      | égal à                   |
+| `!=`      | différent de             |
+| `>`       | strictement supérieur    |
+| `<`       | strictement inférieur    |
+| `>=`      | supérieur ou égal        |
+| `<=`      | inférieur ou égal        |
+| `&`       | ET logique               |
+| \`        | \`                       |
+| `%in%`    | appartient à un ensemble |
+| `!`       | négation                 |

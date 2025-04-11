@@ -1,0 +1,59 @@
+---
+title: "visualisation"
+format: pdf
+editor: visual
+---
+
+```{r}
+library(gapminder)
+library(tidyverse)
+data(gapminder)
+head(gapminder)
+```
+
+```{r}
+west <- gapminder %>% filter(country %in% c("Togo", "Ghana", "Mali", "Senegal", "Benin"))
+head(west)
+```
+
+```{r}
+west %>% ggplot(aes(year, pop)) + geom_line(aes(group = country, color = country)) + labs(
+    title = "L'évolution de la population",
+    x = "Année",
+    y = "Population",
+    caption = "Source: gapminder"
+  )
+```
+
+```{r}
+west %>% ggplot(aes(country, lifeExp)) + geom_boxplot(aes(fill = country, group = country)) + geom_jitter() + labs(
+    title = "Expérance de vie",
+    x = "Pays",
+    y = "Expérance de vie",
+    caption = "Source: gapminder"
+  )
+```
+
+```{r}
+west %>% ggplot(aes(country, lifeExp)) + geom_violin(aes(fill = country, group = country)) + geom_jitter() +
+  labs(
+    title = "Expérance de vie",
+    x = "Pays",
+    y = "Expérance de vie",
+    caption = "Source: gapminder"
+  )
+```
+
+```{r}
+west   %>% ggplot(aes(gdpPercap)) + geom_density(aes(group = country, fill = country, alpha = 0.3)) +
+  labs(
+    title = "La distribution du pib par habitants ",
+    x = "Année",
+    y = "PIB par habitant",
+    caption = "Source: gapminder"
+  )
+```
+
+```{r}
+
+```

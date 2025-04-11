@@ -1,0 +1,19 @@
+---
+title: "logique"
+format: pdf
+editor: visual
+---
+
+## **Opérateurs logiques (booléens)**
+
+| Opérateur | Signification | Exemple | Résultat |
+|----|----|----|----|
+| `&` | ET logique élément par élément | `c(TRUE, FALSE) & c(TRUE, TRUE)` | `[1] TRUE FALSE` |
+| \` | \` | OU logique élément par élément | \`c(TRUE, FALSE) |
+| `!` | NON logique (négation) | `!TRUE` | `FALSE` |
+| `&&` | ET logique pour le **1er élément** uniquement | `TRUE && FALSE` | `FALSE` |
+| \` |  | \` | OU logique pour le **1er élément** uniquement |
+
+------------------------------------------------------------------------
+
+## 

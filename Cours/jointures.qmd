@@ -1,0 +1,37 @@
+---
+title: "jointure"
+format: pdf
+editor: visual
+---
+
+## Types de jointures possibles avec dplyr
+
+| Fonction dplyr     | Description                              |
+|--------------------|------------------------------------------|
+| `inner_join(x, y)` | Jointure interne                         |
+| `left_join(x, y)`  | Garde tout de `x`                        |
+| `right_join(x, y)` | Garde tout de `y`                        |
+| `full_join(x, y)`  | Jointure externe complète                |
+| `anti_join(x, y)`  | Lignes de `x` **non présentes** dans `y` |
+| `semi_join(x, y)`  | Lignes de `x` **présentes** dans `y`     |
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+### Types de jointures possibles avec `merge()`
+
+| Type de jointure | Code | Description |
+|----|----|----|
+| Jointure interne | `merge(x, y, by = "id")` | Garde les lignes avec `id` commun |
+| Jointure externe (complète) | `merge(x, y, by = "id", all = TRUE)` | Garde toutes les lignes des 2 jeux de données |
+| Left join | `merge(x, y, by = "id", all.x = TRUE)` | Garde toutes les lignes de `x` |
+| Right join | `merge(x, y, by = "id", all.y = TRUE)` |  |

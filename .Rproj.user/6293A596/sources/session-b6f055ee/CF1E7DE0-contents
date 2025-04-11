@@ -1,0 +1,54 @@
+---
+title: "types primitve"
+format: pdf
+editor: visual
+---
+
+## **Types de données de base en R**
+
+| Type de données | Description | Création |
+|------------------------|------------------------|------------------------|
+| **Numeric** | Nombre à virgule flottante (ex: 3.14, -2.7) | `x <- 3.14` |
+| **Integer** | Nombre entier (ex: 5, -10) | `y <- as.integer(5)` ou `y <- 5L` |
+| **Logical** | Valeur booléenne (TRUE / FALSE) | `z <- TRUE` |
+| **Character** | Chaîne de caractères (ex: "Hello") | `s <- "Bonjour"` |
+| **Complex** | Nombre complexe (ex: 2+3i) | `c <- 2 + 3i` |
+| **Raw** | Représentation brute de données binaires | `r <- charToRaw("Text")` |
+
+```{r}
+install.packages("plotly")
+```
+
+```{r}
+class(ville)
+```
+
+```{r}
+ville <- "Accra"
+
+```
+
+```{r}
+ville
+```
+
+```{r}
+pi <- "3.14"
+```
+
+```{r}
+class(pi)
+```
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+data <- readxl::excel_sheets("../Data/CLASS.xlsx")
+data
+```
+
+```{r}
+library(plotly)
+```

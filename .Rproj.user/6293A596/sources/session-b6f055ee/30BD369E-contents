@@ -1,0 +1,44 @@
+---
+title: "lire et ecrire dans un fichier"
+format: pdf
+editor: visual
+---
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+## Fonctions de lecture avec `readr` (inclus dans `tidyverse`)
+
+Voici les principales fonctions de lecture de fichiers optimisées (plus rapides et plus sûres que `read.csv()` ou `read.table()` de base) :
+
+| Fonction | Format attendu | Description |
+|----|----|----|
+| `read_csv()` | Fichier `.csv` | Lecture de fichier CSV (séparé par virgule) |
+| `read_csv2()` | Fichier `.csv` | Séparé par **point-virgule `;`** (format européen) |
+| `read_tsv()` | Fichier `.tsv` | Tab-separated values (séparé par tabulations) |
+| `read_delim()` | Format quelconque | Lecture d’un fichier avec séparateur personnalisé |
+| `read_table()` | Texte structuré | Lecture de tableaux avec espace fixe |
+| `read_lines()` | Texte brut | Lecture ligne par ligne (vecteur de caractères) |
+| `read_file()` | Texte brut | Lit tout le fichier dans une seule chaîne |
+
+| Fonction | Format | Description |
+|----|----|----|
+| `write_csv()` | CSV | Écrit un fichier CSV rapide et propre |
+| `write_csv2()` | CSV européen | Séparateur `;` pour Excel européen |
+| `write_tsv()` | TSV | Fichier avec tabulations |
+| `write_delim()` | Personnalisé | Tu choisis ton propre séparateur (\` |
+| `write_lines()` | Texte brut | Écrit un vecteur ligne par ligne |
+| `write_file()` | Texte brut | Écrit une chaîne de caractères dans un fichier |

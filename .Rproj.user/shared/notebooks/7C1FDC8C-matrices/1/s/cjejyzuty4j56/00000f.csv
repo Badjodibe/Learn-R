@@ -1,0 +1,4 @@
+"0","det(ages)"
+"2","Error in determinant.matrix(x, logarithm = TRUE, ...) : 
+  'x' must be a square matrix
+"

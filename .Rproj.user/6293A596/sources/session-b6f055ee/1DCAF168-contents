@@ -1,0 +1,17 @@
+---
+title: "dataframe"
+format: pdf
+editor: visual
+---
+
+## 6. Qu’est-ce qu’un data frame ?
+
+Un **data frame** est une structure de données **tabulaire** (comme une table ou un fichier Excel) avec :
+
+-   des **colonnes** nommées,
+
+    des **lignes** (observations),
+
+    chaque colonne pouvant contenir un **type de données différent** (numérique, caractère, facteur, etc.).
+
+> 📌 C’est l’équivalent d’une **table SQL** ou d’un **tableau Excel**.

@@ -1,0 +1,6 @@
+"0","west %>% ggplot(aes(year, pop)) + geom_line(aes(group = country, color = country)) + labs("
+"0","    title = ""L'évolution de la population"","
+"0","    x = ""Année"","
+"0","    y = ""Population"","
+"0","    caption = ""Source: gapminder"""
+"0","  )"

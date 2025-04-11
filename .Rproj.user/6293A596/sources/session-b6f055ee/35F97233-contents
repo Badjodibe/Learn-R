@@ -1,0 +1,11 @@
+---
+title: "facteurs"
+format: pdf
+editor: visual
+---
+
+## Qu’est-ce qu’un facteur ?
+
+Un **facteur** en R est un vecteur **catégoriel** qui contient un nombre limité de valeurs possibles appelées **niveaux** (*levels*).
+
+> 📌 C’est utile pour la **statistique**, les **modèles**, et les **graphiques**. R les traite différemment des simples chaînes de caractères.

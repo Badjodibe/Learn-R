@@ -1,0 +1,6 @@
+"0","west %>% ggplot(aes(country, lifeExp)) + geom_boxplot(aes(fill = country, group = country)) + geom_jitter() + labs("
+"0","    title = ""Expérance de vie"","
+"0","    x = ""Pays"","
+"0","    y = ""Expérance de vie"","
+"0","    caption = ""Source: gapminder"""
+"0","  )"

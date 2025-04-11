@@ -1,0 +1,115 @@
+---
+title: "Statistiques descriptive"
+author: "BADJO Dibe"
+format: pdf
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+data()
+```
+
+### Mesures de tendance centrale
+
+1.  **Moyenne** :
+
+    $$ \\ \mu = \frac{1}{n} \sum_{i=1}^{n} x_i$$
+
+    ```{r}
+    mean(gapminder$lifeExp)
+    ```
+
+    ```{r}
+
+    ```
+
+    ```{r}
+
+    ```
+
+2.  **Médiane** :
+
+    $$\text{Si n est impair Médiane} = x_{\left(\frac{n+1}{2}\right)} \\ 
+    \text{Médiane} = \frac{x_{\frac{n}{2}} + x_{\frac{n}{2}+1}}{2} \quad \text{si n est pair}$$
+
+    ```{r}
+    median(gapminder$lifeExp)
+    ```
+
+    ```{r}
+
+    ```
+
+    ```{r}
+
+    ```
+
+3.  **Mode**
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+### Mesures de dispersion
+
+1.  **Écart-type** : $$ \\ \sigma = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (x_i - \mu)^2}$$
+
+    ```{r}
+    sd(gapminder$lifeExp)
+
+    ```
+
+    ```{r}
+
+    ```
+
+    ```{r}
+
+    ```
+
+2.  **Variance** : $$\\ \sigma^2 = \frac{1}{n} \sum_{i=1}^{n} (x_i - \mu)^2$$
+
+    ```{r}
+    var(gapminder$lifeExp)
+    ```
+
+    ```{r}
+
+    ```
+
+    ```{r}
+
+    ```
+
+    **Plage (Range)** : La **plage** est la différence entre la valeur maximale et la valeur minimale d'un ensemble de données.
+
+    $$\\ \text{Plage} = \max(x) - \min(x)$$
+
+    **Intervalle interquartile (IQR)** : L'**intervalle interquartile** mesure la dispersion des valeurs entre les 25 % et les 75 % (les premiers et troisièmes quartiles).
+
+    $$ \\ IQR = Q_3 - Q_1$$
+
+### Calcul des quantiles et percentiles
+
+```{r}
+install.packages("psych")
+library(psych)
+describe(gapminder$lifeExp)
+```
+
+```{r}
+
+```
+
+```{r}
+
+```

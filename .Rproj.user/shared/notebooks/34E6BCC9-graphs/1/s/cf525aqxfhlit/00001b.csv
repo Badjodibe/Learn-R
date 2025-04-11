@@ -1,0 +1,2 @@
+"0","west <- gapminder %>% filter(country %in% c(""Togo"", ""Ghana"", ""Mali"", ""Senegal"", ""Benin""))"
+"0","head(west)"

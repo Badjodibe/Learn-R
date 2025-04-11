@@ -1,0 +1,7 @@
+"0","west %>% ggplot(aes(country, lifeExp)) + geom_violin(aes(fill = country, group = country)) + geom_jitter() +"
+"0","  labs("
+"0","    title = ""Expérance de vie"","
+"0","    x = ""Pays"","
+"0","    y = ""Expérance de vie"","
+"0","    caption = ""Source: gapminder"""
+"0","  )"

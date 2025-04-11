@@ -1,0 +1,96 @@
+---
+title: "manipulation"
+format: pdf
+editor: visual
+---
+
+Créer une nouvelle variable
+
+```{r}
+gapminder <- gapminder %>%
+  mutate(GDP = gdpPercap * pop)
+
+head(gapminder)
+
+```
+
+Supprimer une variable
+
+```{r}
+gapminder <- gapminder %>%
+  select(-GDP)  # Supprimer la colonne GDP
+
+head(gapminder)
+
+```
+
+Modifier une variable
+
+```{r}
+gapminder <- gapminder %>%
+  mutate(lifeExp = lifeExp + 1)
+
+head(gapminder)
+
+```
+
+```{r}
+
+gapminder <- gapminder %>%
+  mutate(lifeExp = lifeExp + 1)
+
+head(gapminder)
+
+```
+
+Renommer une variable
+
+```{r}
+gapminder <- gapminder %>%
+  rename(Population = pop)
+
+head(gapminder)
+
+```
+
+Trier les données
+
+```{r}
+gapminder_sorted <- gapminder %>%
+  arrange(desc(gdpPercap))
+
+head(gapminder_sorted)
+
+```
+
+Sélectionner des variables spécifiques
+
+```{r}
+gapminder_selected <- gapminder %>%
+  select(country, continent, lifeExp)
+
+head(gapminder_selected)
+
+```
+
+Ajouter une colonne avec des conditions (création d’une variable catégorielle)
+
+```{r}
+gapminder <- gapminder %>%
+  mutate(life_category = case_when(
+    lifeExp < 50 ~ "Faible",
+    lifeExp >= 50 & lifeExp < 70 ~ "Moyenne",
+    lifeExp >= 70 ~ "Élevée"
+  ))
+
+head(gapminder)
+
+```
+
+Afficher les lignes
+
+```{r}
+gapminder %>%
+  slice(c(2, 4))
+
+```

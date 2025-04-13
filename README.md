@@ -108,7 +108,11 @@ git clone https://github.com/Badjodibe/Learn-R.git
 cd Learn-R
 ls
 ```
-
+3. ** Si vous avez déjà le code et vous voulez le mettre à jour **
+   
+``` bash
+git pull
+```
 ## Support
 
 Si vous avez des questions ou des problèmes, vous pouvez ouvrir une **issue** sur GitHub ou me contacter par email à [[badjodibe\@gmail.com](mailto:badjodibe@gmail.com){.email}].

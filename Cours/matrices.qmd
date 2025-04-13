@@ -1,0 +1,73 @@
+---
+title: "matrices"
+format: pdf
+editor: visual
+---
+
+Super ! Voici une présentation claire et pédagogique des **matrices en R**, avec définitions, création, manipulation, opérations et fonctions utiles. Tu pourras facilement l’intégrer à ta formation ou à un document Quarto.
+
+------------------------------------------------------------------------
+
+## 🧮 Les Matrices en R
+
+Une **matrice** est une structure bidimensionnelle (lignes et colonnes) contenant **des éléments de même type** (généralement numériques).
+
+------------------------------------------------------------------------
+
+### ✅ **1. Création de matrices**
+
+```{r}
+# Création simple avec nrow (lignes) et ncol (colonnes)
+m1 <- matrix(1:6, nrow = 2, ncol = 3)
+# Remplissage ligne par ligne
+m2 <- matrix(1:6, nrow = 2, byrow = TRUE)
+
+# Vecteur converti en matrice
+v <- 1:9
+dim(v) <- c(3, 3)  # devient une matrice 3x3
+```
+
+------------------------------------------------------------------------
+
+### 📏 **2. Dimensions et accès**
+
+```{r}
+dim(m1)          # dimensions (lignes, colonnes)
+nrow(m1)         # nombre de lignes
+ncol(m1)         # nombre de colonnes
+
+# Accès à des éléments
+m1[1, 2]         # élément ligne 1, colonne 2
+m1[ , 2]         # toute la colonne 2
+m1[1, ]          # toute la ligne 1
+```
+
+``` r
+```
+
+------------------------------------------------------------------------
+
+### 🧮 **3. Opérations sur matrices**
+
+```{r}
+A <- matrix(1:4, 2, 2)
+B <- matrix(5:8, 2, 2)
+
+A + B            # addition élément par élément
+A * B            # multiplication élément par élément
+A %*% B          # multiplication matricielle
+t(A)             # transposée
+```
+
+------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+### 🔄 **4. Modification**
+
+``` r
+m1[1, 2] <- 100          # modifier un élément
+m1[ , 3] <- c(9, 9)      # modifier une colonne entière
+```
+
+------------------------------------------------------------------------

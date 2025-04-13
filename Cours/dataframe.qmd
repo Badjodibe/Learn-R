@@ -1,0 +1,67 @@
+---
+title: "dataframe"
+format: pdf
+editor: visual
+---
+
+------------------------------------------------------------------------
+
+## 🧾 Les Data Frames en R
+
+Un **data frame** est une structure en **tableau** qui peut contenir **des colonnes de types différents** (numériques, caractères, logiques, facteurs…). C’est l’équivalent d’une feuille Excel ou d’une table SQL.
+
+------------------------------------------------------------------------
+
+### ✅ **1. Création d’un data frame**
+
+```{r}
+# que  Exemple simple
+df <- data.frame(
+  nom = c("Alice", "Bob", "Charlie"),
+  age = c(25, 30, 28),
+  actif = c(TRUE, FALSE, TRUE)
+)
+```
+
+``` r
+```
+
+------------------------------------------------------------------------
+
+### 🔍 **2. Affichage et résumé**
+
+``` r
+print(df)            # afficher le data frame
+str(df)              # structure (type de chaque colonne)
+summary(df)          # statistiques descriptives
+```
+
+------------------------------------------------------------------------
+
+### 🧭 **3. Accès aux données**
+
+``` r
+```
+
+```{r}
+df$nom               # colonne "nom"
+df[1, ]              # première ligne
+df[, 2]              # deuxième colonne
+df[1, 2]             # élément ligne 1, colonne 2
+df[ , "age"]         # colonne "age"
+```
+
+------------------------------------------------------------------------
+
+### ✍️ **4. Manipulation**
+
+```{r}
+# Ajouter une colonne
+df$note <- c(15, 12, 18)
+
+# Ajouter une ligne
+df <- rbind(df, data.frame(nom = "Diane", age = 26, actif = TRUE, note = 17))
+
+# Supprimer une colonne
+df$actif <- NULL
+```

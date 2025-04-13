@@ -5,6 +5,11 @@ editor: visual
 ---
 
 ```{r}
+library(tidyverse)
+library(gapminder)
+```
+
+```{r}
 data("gapminder")
 ```
 
@@ -17,7 +22,8 @@ View(gapminder)
 > Affiche les pays africains dont l'espérance de vie en 2007 était inférieure à 50 ans.
 
 ```{r}
-
+gapminder %>%
+  filter(continent == "Africa", year == 2007, lifeExp < 50)
 ```
 
 ------------------------------------------------------------------------
@@ -27,6 +33,8 @@ View(gapminder)
 > Trouve tous les pays asiatiques dont la population a dépassé 100 millions en 2007.
 
 ```{r}
+gapminder %>%
+  filter(continent == "Asia", year == 2007, pop > 1e8)
 
 ```
 
@@ -35,7 +43,11 @@ View(gapminder)
 > Liste les pays d’Europe dont le PIB par habitant a augmenté entre 1997 et 2007.
 
 ```{r}
-
+gapminder %>%
+  filter(continent == "Europe", year %in% c(1997, 2007)) %>%
+  select(country, year, gdpPercap) %>%
+  spread(year, gdpPercap) %>%
+  filter(`2007` > `1997`)
 ```
 
 ### Énoncé 4
@@ -50,17 +62,52 @@ View(gapminder)
 
 ------------------------------------------------------------------------
 
+```{r}
+gapminder %>%
+  filter(year == 2002,
+         lifeExp > 70,
+         gdpPercap > 10000,
+         pop < 1e7)
+
+```
+
 ### Énoncé 5
 
 > Quels pays ont vu leur espérance de vie **diminuer** entre 1982 et 1987 ?
 
-### Énoncé 6
+```{r}
+gapminder %>%
+  filter(year %in% c(1982, 1987)) %>%
+  select(country, year, lifeExp) %>%
+  spread(year, lifeExp) %>%
+  filter(`1987` < `1982`)
 
+```
+
+> ### Énoncé 6
+>
 > Liste les pays qui ont **toujours** eu une espérance de vie supérieure à 70 ans durant toute la période.
+
+```{r}
+gapminder %>%
+  group_by(country) %>%
+  filter(all(lifeExp > 70)) %>%
+  distinct(country)
+```
 
 ### Énoncé 7
 
 > Affiche les 5 pays d’Afrique avec le **plus grand gain d’espérance de vie** entre 1952 et 2007.
+
+```{r}
+gapminder %>%
+  filter(continent == "Africa", year %in% c(1952, 2007)) %>%
+  select(country, year, lifeExp) %>%
+  spread(year, lifeExp) %>%
+  mutate(gain = `2007` - `1952`) %>%
+  arrange(desc(gain)) %>%
+  slice_head(n = 10)
+```
 
 ------------------------------------------------------------------------
 
@@ -71,6 +118,16 @@ Crée une colonne `cat_vie` qui classe l’espérance de vie en :
 -   `"Moyenne"` si entre 60 et 75
 
 -   `"Élevée"` si \> 75
+
+```{r}
+gapminder %>%
+  mutate(cat_vie = case_when(
+    lifeExp < 60 ~ "Faible",
+    lifeExp >= 60 & lifeExp <= 75 ~ "Moyenne",
+    lifeExp > 75 ~ "Élevée"
+  ))
+
+```
 
 ## Filtrer les données avec `filter()` – dplyr
 

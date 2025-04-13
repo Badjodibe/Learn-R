@@ -1,6 +1,0 @@
-"0","a <- list(""nom"" : c(""ama"", ""beno""), 1 : c(1,2,3,4,5))"
-"2","Warning: numerical expression has 2 elements: only the first used"
-"2","Warning: NAs introduced by coercion"
-"2","Warning: NAs introduced by coercion"
-"2","Error in ""nom"":c(""ama"", ""beno"") : NA/NaN argument
-"

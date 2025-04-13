@@ -1,7 +1,0 @@
-"0","west   %>% ggplot(aes(gdpPercap)) + geom_density(aes(group = country, fill = country, alpha = 0.3)) +"
-"0","  labs("
-"0","    title = ""La distribution du pib par habitants "","
-"0","    x = ""Année"","
-"0","    y = ""PIB par habitant"","
-"0","    caption = ""Source: gapminder"""
-"0","  )"

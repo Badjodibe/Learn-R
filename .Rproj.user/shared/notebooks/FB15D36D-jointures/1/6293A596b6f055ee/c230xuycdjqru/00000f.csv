@@ -1,4 +1,0 @@
-"0","flights_joined <- flights %>%"
-"0","  left_join(airlines, by = ""carrier"")"
-"0",""
-"0","head(flights_joined %>% select(carrier, name))"

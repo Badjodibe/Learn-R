@@ -17,7 +17,7 @@ data()
     $$ \\ \mu = \frac{1}{n} \sum_{i=1}^{n} x_i$$
 
     ```{r}
-
+    mean(gapminder$lifeExp)
     ```
 
     ```{r}
@@ -34,7 +34,7 @@ data()
     \text{Médiane} = \frac{x_{\frac{n}{2}} + x_{\frac{n}{2}+1}}{2} \quad \text{si n est pair}$$
 
     ```{r}
-
+    median(gapminder$lifeExp)
     ```
 
     ```{r}
@@ -64,6 +64,7 @@ data()
 1.  **Écart-type** : $$ \\ \sigma = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (x_i - \mu)^2}$$
 
     ```{r}
+    sd(gapminder$lifeExp)
 
     ```
 
@@ -78,7 +79,7 @@ data()
 2.  **Variance** : $$\\ \sigma^2 = \frac{1}{n} \sum_{i=1}^{n} (x_i - \mu)^2$$
 
     ```{r}
-
+    var(gapminder$lifeExp)
     ```
 
     ```{r}
@@ -100,7 +101,9 @@ data()
 ### Calcul des quantiles et percentiles
 
 ```{r}
-
+install.packages("psych")
+library(psych)
+describe(gapminder$lifeExp)
 ```
 
 ```{r}

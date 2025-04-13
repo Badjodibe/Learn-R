@@ -1,0 +1,91 @@
+---
+title: "vecteurs"
+format: pdf
+editor: visual
+---
+
+Parfait ! Voici une **présentation complète des vecteurs en R**, avec définitions, types, opérations et manipulations courantes. Tu pourras facilement l’intégrer dans ta formation ou dans un document Quarto.
+
+------------------------------------------------------------------------
+
+## 📦 Les Vecteurs en R
+
+En R, **le vecteur est la structure de données la plus fondamentale**. Il contient une collection de valeurs du **même type**.
+
+------------------------------------------------------------------------
+
+### ✅ **1. Création de vecteurs**
+
+```{r}
+# Numérique
+v1 <- c(1, 2, 3, 4)
+
+# Caractère
+v2 <- c("a", "b", "c")
+
+# Logique
+v3 <- c(TRUE, FALSE, TRUE)
+
+# Séquences
+v4 <- 1:10           # de 1 à 10
+v5 <- seq(0, 1, 0.2) # de 0 à 1 avec un pas de 0.2
+
+# Répétitions
+v6 <- rep(5, times = 4)      # 5 5 5 5
+v7 <- rep(c("A", "B"), each = 2)  # "A" "A" "B" "B"
+```
+
+------------------------------------------------------------------------
+
+### 🔄 **2. Accès aux éléments**
+
+```{r}
+x <- c(10, 20, 30, 40)
+
+x[1]      # premier élément (10)
+x[2:3]    # éléments 2 et 3 (20, 30)
+x[-1]     # tous sauf le 1er
+x[c(TRUE, FALSE, TRUE, FALSE)]  # filtrage logique
+```
+
+------------------------------------------------------------------------
+
+### ➕ **3. Opérations sur vecteurs numériques**
+
+```{r}
+x <- c(1, 2, 3)
+y <- c(10, 20, 30)
+
+x + y         # addition élément par élément
+x * y         # multiplication
+sum(x)        # somme des éléments
+mean(x)       # moyenne
+sd(x)         # écart-type
+```
+
+------------------------------------------------------------------------
+
+### 🧪 **4. Fonctions utiles**
+
+```{r}
+length(x)      # longueur du vecteur
+sort(x)        # trier
+rev(x)         # inverser
+unique(c(1, 2, 2, 3))  # valeurs uniques
+```
+
+------------------------------------------------------------------------
+
+### 📏 **5. Test du type et coercition**
+
+```{r}
+is.vector(x)           # TRUE
+typeof(x)              # "double", "character", etc.
+
+# Coercition implicite
+c(1, "a", TRUE)        # Tout est converti en "character"
+
+# Coercition explicite
+as.numeric("5")        # 5
+as.character(123)      # "123"
+```

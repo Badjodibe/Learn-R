@@ -4,6 +4,92 @@ format: pdf
 editor: visual
 ---
 
+```{r}
+library(nycflights13)
+library(dplyr)
+```
+
+```         
+`flights` — vols au départ de NYC en 2013
+
+`airlines` — noms des compagnies aériennes
+
+`airports` — infos sur les aéroports
+
+`planes` — infos sur les avions
+
+`weather` — conditions météo
+```
+
+```{r}
+planes
+```
+
+```{r}
+flights
+```
+
+```{r}
+airlines
+```
+
+1\. **left_join()** – Ajouter les noms des compagnies aux vols
+
+```{r}
+flights_joined <- flights %>%
+  left_join(airlines, by = "carrier")
+
+head(flights_joined %>% select(carrier, name))
+```
+
+2\. **inner_join()** – Garder seulement les vols ayant des infos météo
+
+```{r}
+flights_weather <- flights %>%
+  inner_join(weather, by = c("year", "month", "day", "hour", "origin"))
+
+flights_weather
+```
+
+3\. **right_join()** – Voir les avions qui ont volé (même si certaines infos de vol manquent)
+
+```{r}
+planes_joined <- flights %>%
+  right_join(planes, by = "tailnum")
+
+planes_joined %>% select(tailnum, year.x, manufacturer) %>% head()
+```
+
+4\. **full_join()** – Combiner deux jeux de données sans perdre d’infos
+
+```{r}
+full_data <- flights %>%
+  full_join(airlines, by = "carrier")
+
+full_data 
+
+```
+
+5\. **semi_join()** – Garder uniquement les vols opérés par certaines compagnies
+
+```{r}
+united_flights <- flights %>%
+  semi_join(filter(airlines, name == "United Air Lines Inc."), by = "carrier")
+
+united_flights %>% select(carrier, flight) %>% head()
+
+```
+
+6\. **anti_join()** – Trouver les vols qui n’ont **pas** de correspondance avec la météo (par exemple)
+
+```{r}
+no_weather_data <- flights %>%
+  anti_join(weather, by = c("year", "month", "day", "hour", "origin"))
+
+nrow(no_weather_data)
+
+```
+
 ## Types de jointures possibles avec dplyr
 
 | Fonction dplyr     | Description                              |
@@ -14,24 +100,3 @@ editor: visual
 | `full_join(x, y)`  | Jointure externe complète                |
 | `anti_join(x, y)`  | Lignes de `x` **non présentes** dans `y` |
 | `semi_join(x, y)`  | Lignes de `x` **présentes** dans `y`     |
-
-```{r}
-
-```
-
-```{r}
-
-```
-
-```{r}
-
-```
-
-### Types de jointures possibles avec `merge()`
-
-| Type de jointure | Code | Description |
-|----|----|----|
-| Jointure interne | `merge(x, y, by = "id")` | Garde les lignes avec `id` commun |
-| Jointure externe (complète) | `merge(x, y, by = "id", all = TRUE)` | Garde toutes les lignes des 2 jeux de données |
-| Left join | `merge(x, y, by = "id", all.x = TRUE)` | Garde toutes les lignes de `x` |
-| Right join | `merge(x, y, by = "id", all.y = TRUE)` |  |

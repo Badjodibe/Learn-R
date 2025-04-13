@@ -1,0 +1,110 @@
+---
+title: "listes"
+format: pdf
+editor: visual
+---
+
+Parfait ! Voici une présentation complète des **listes en R**, idéale pour l’intégrer dans une formation ou un document Quarto.
+
+------------------------------------------------------------------------
+
+## 📚 Les Listes en R
+
+Une **liste** est une structure de données très flexible qui peut contenir **des objets de types différents** : vecteurs, matrices, fonctions, data frames, etc.
+
+------------------------------------------------------------------------
+
+### ✅ **1. Création de listes**
+
+``` r
+# Liste contenant différents types d'objets
+ma_liste <- list(
+  nom = "Analyse",
+  annee = 2025,
+  notes = c(15, 12, 18),
+  matrice = matrix(1:4, 2, 2)
+)
+```
+
+------------------------------------------------------------------------
+
+### 🔍 **2. Accès aux éléments**
+
+``` r
+# Par nom
+ma_liste$nom            # "Analyse"
+
+# Par position
+ma_liste[[2]]           # 2025
+
+# Extraire un sous-ensemble comme une liste
+ma_liste["notes"]       # toujours une liste
+```
+
+------------------------------------------------------------------------
+
+### 🧪 **3. Manipulation**
+
+``` r
+# Ajouter un élément
+ma_liste$valide <- TRUE
+
+# Modifier un élément
+ma_liste$annee <- 2024
+
+# Supprimer un élément
+ma_liste$valide <- NULL
+```
+
+------------------------------------------------------------------------
+
+### 📦 **4. Fonctions utiles**
+
+``` r
+length(ma_liste)         # nombre d’éléments
+names(ma_liste)          # noms des éléments
+
+# Appliquer une fonction à chaque élément
+lapply(ma_liste, class)  # classes de chaque élément
+```
+
+------------------------------------------------------------------------
+
+### 🧠 **5. Accès avancé avec `lapply`, `sapply`, etc.**
+
+``` r
+# lapply retourne toujours une liste
+lapply(ma_liste, length)
+
+# sapply tente de simplifier le résultat
+sapply(ma_liste, length)
+```
+
+------------------------------------------------------------------------
+
+### 🧬 **6. Listes imbriquées**
+
+``` r
+liste_complexe <- list(
+  utilisateur = list(nom = "Ali", age = 30),
+  scores = list(math = 15, info = 18)
+)
+
+# Accès imbriqué
+liste_complexe$utilisateur$nom    # "Ali"
+liste_complexe[[1]]$age           # 30
+```
+
+------------------------------------------------------------------------
+
+### 🚨 **Différences clés avec les vecteurs**
+
+| Caractéristique     | Vecteur | Liste           |
+|---------------------|---------|-----------------|
+| Type unique         | Oui     | Non             |
+| Indexation simple   | Oui     | Moins intuitive |
+| Structure imbriquée | Non     | Oui             |
+
+------------------------------------------------------------------------
+
+Souhaite-tu que je génère un document Quarto avec tout ça organisé en sections HTML ou PDF, avec du style et des blocs exécutables ?

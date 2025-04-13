@@ -1,0 +1,92 @@
+---
+title: "facteurs"
+format: pdf
+editor: visual
+---
+
+Voici une fiche claire et complète sur les **facteurs (`factors`) en R**, parfaite pour ta formation ou un document Quarto. Les facteurs sont essentiels en analyse de données, surtout pour gérer les **variables catégorielles**.
+
+---
+
+## 🏷️ Les Facteurs en R
+
+Un **facteur** est une variable catégorielle qui prend un nombre limité de **valeurs distinctes appelées *niveaux***. Très utile pour représenter des données qualitatives (sexe, statut, niveau, etc.).
+
+---
+
+### ✅ **1. Création d’un facteur**
+
+```r
+# À partir d’un vecteur de caractères
+sexe <- c("Homme", "Femme", "Femme", "Homme")
+facteur_sexe <- factor(sexe)
+```
+
+```r
+# Résultat
+facteur_sexe
+# [1] Homme Femme Femme Homme
+# Levels: Femme Homme
+```
+
+---
+
+### 🧾 **2. Vérification et niveaux**
+
+```r
+is.factor(facteur_sexe)      # TRUE
+levels(facteur_sexe)         # "Femme" "Homme"
+nlevels(facteur_sexe)        # 2
+```
+
+---
+
+### ✍️ **3. Changer l’ordre ou les niveaux**
+
+```r
+# Réordonner les niveaux
+facteur_ordre <- factor(sexe, levels = c("Homme", "Femme"))
+
+# Renommer les niveaux
+levels(facteur_ordre) <- c("M", "F")
+```
+
+---
+
+### 📊 **4. Facteurs ordonnés**
+
+Utiles pour les échelles (ex: "faible", "moyen", "élevé").
+
+```r
+note <- c("Moyen", "Élevé", "Faible", "Élevé")
+facteur_note <- factor(note, levels = c("Faible", "Moyen", "Élevé"), ordered = TRUE)
+
+facteur_note
+# [1] Moyen  Élevé Faible Élevé
+# Levels: Faible < Moyen < Élevé
+```
+
+```r
+# Comparaison possible
+facteur_note[1] < facteur_note[2]   # TRUE
+```
+
+---
+
+### 🛠️ **5. Utilisation dans les analyses**
+
+- Les facteurs sont **automatiquement gérés** dans les modèles statistiques (`lm`, `glm`, etc.).
+- Ils apparaissent comme **variables catégorielles** dans les data frames.
+- Permettent de **créer des sous-groupes** dans les graphiques (ggplot2 par ex).
+
+---
+
+### ⚠️ Astuce
+
+Si tu charges des données depuis un fichier, R peut transformer automatiquement les colonnes en facteurs. Tu peux éviter ça avec :
+
+```r
+read.csv("fichier.csv", stringsAsFactors = FALSE)
+```
+
+---

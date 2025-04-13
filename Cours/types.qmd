@@ -1,0 +1,193 @@
+---
+title: "types primitives"
+format: pdf
+editor: visual
+---
+
+Bien sûr ! Voici un résumé clair des **types de données primitifs en R**, avec **exemples de création et de manipulation** pour chacun :
+
+------------------------------------------------------------------------
+
+### 🔢 **1. Numérique (`numeric`)**
+
+Représente les nombres décimaux (par défaut `double`).
+
+```{r}
+x <- 3.14        # création
+x + 2            # addition
+x * 10           # multiplication
+is.numeric(x)    # TRUE
+```
+
+------------------------------------------------------------------------
+
+### 🔢 **2. Entier (`integer`)**
+
+Nombre entier avec un `L` pour spécifier.
+
+```{r}
+y <- 10L
+y + 5L           # addition
+typeof(y)        # "integer"
+is.integer(y)    # TRUE
+```
+
+------------------------------------------------------------------------
+
+### 📝 **3. Caractère (`character`)**
+
+Chaînes de texte.
+
+```{r}
+nom <- "Analyse"
+paste(nom, "de données")     # "Analyse de données"
+nchar(nom)                   # nombre de caractères
+toupper(nom)                 # "ANALYSE"
+```
+
+------------------------------------------------------------------------
+
+### ✅ **4. Logique (`logical`)**
+
+Booléens : `TRUE` ou `FALSE`.
+
+```{r}
+a <- TRUE
+b <- FALSE
+a & b        # FALSE (ET logique)
+a | b        # TRUE (OU logique)
+!a           # FALSE (NON logique)
+```
+
+------------------------------------------------------------------------
+
+### 🔮 **5. Complexe (`complex`)**
+
+Nombres complexes (peu courant sauf en science).
+
+```{r}
+z <- 2 + 3i
+Mod(z)        # module
+Re(z)         # partie réelle
+Im(z)         # partie imaginaire
+```
+
+------------------------------------------------------------------------
+
+### 🚫 **6. Null & NA**
+
+Absence ou manque de valeur.
+
+```{r}
+a <- NULL      # vide
+b <- NA        # manquant
+
+is.null(a)     # TRUE
+is.na(b)       # TRUE
+```
+
+------------------------------------------------------------------------
+
+Opération
+
+Parfait ! Voici un récapitulatif clair et pratique des **opérations que tu peux effectuer sur les types de données primitifs en R**, à intégrer facilement dans ton document Quarto ou à utiliser pour ton cours.
+
+------------------------------------------------------------------------
+
+## 🔢 **1. Numérique (`numeric`)**
+
+```{r}
+x <- 7.5
+y <- 2.5
+
+# Opérations arithmétiques
+x + y     # addition
+x - y     # soustraction
+x * y     # multiplication
+x / y     # division
+x ^ 2     # puissance
+sqrt(x)   # racine carrée
+
+# Fonctions utiles
+round(x)       # arrondir
+floor(x)       # arrondi inférieur
+ceiling(x)     # arrondi supérieur
+```
+
+------------------------------------------------------------------------
+
+## 🔢 **2. Entier (`integer`)**
+
+```{r}
+a <- 10L
+b <- 3L
+
+# Même opérations que numeric
+a %% b     # modulo (reste de division)
+a %/% b    # division entière
+
+# Vérification
+is.integer(a)
+```
+
+------------------------------------------------------------------------
+
+## 📝 **3. Caractère (`character`)**
+
+```{r}
+nom <- "R"
+texte <- "Analyse de données"
+
+# Concaténation
+paste(nom, texte)            # "R Analyse de données"
+paste0(nom, texte)           # "RAnalyse de données"
+
+# Transformation
+toupper(texte)               # "ANALYSE DE DONNÉES"
+tolower(texte)               # "analyse de données"
+
+# Sous-chaînes
+substr(texte, 1, 7)          # "Analyse"
+
+# Longueur
+nchar(texte)                 # nombre de caractères
+```
+
+------------------------------------------------------------------------
+
+## ✅ **4. Logique (`logical`)**
+
+```{r}
+vrai <- TRUE
+faux <- FALSE
+
+# Opérations logiques
+vrai & faux      # ET logique => FALSE
+vrai | faux      # OU logique => TRUE
+!vrai            # NON logique => FALSE
+
+# Comparaisons
+x <- 5
+x > 3            # TRUE
+x == 5           # TRUE
+x != 4           # TRUE
+```
+
+------------------------------------------------------------------------
+
+## 🔮 **5. Complexe (`complex`)**
+
+```{r}
+z <- 2 + 3i
+w <- 1 + 2i
+
+# Opérations
+z + w            # addition
+z * w            # multiplication
+
+# Fonctions utiles
+Mod(z)           # module
+Re(z)            # partie réelle
+Im(z)            # partie imaginaire
+Conj(z)          # conjugé
+```
